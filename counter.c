@@ -41,7 +41,7 @@ int main()
   for (i = 0; i < strlen(buffer); i++) {
     curchar = toupper(buffer[i]);
     if (curchar >= 65 && curchar <= 90) count[curchar - 65]++;
-    if (curchar == ' ') spaces++;
+    else if (curchar == ' ') spaces++;
     else other++;
   }
 
@@ -58,7 +58,7 @@ int main()
   // Output the number of other characters
   printf("%-10s%-15d%-15.2f\n","Other",
                             other,
-                            (((float) count[i]) / strlen(buffer)) * 100);
+                            (((float) other) / strlen(buffer)) * 100);
 
 
 
